@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Listado de Profesores</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/create-teacher">
+        <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+        Añadir Profesor
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row class="header-row">
+      <ion-col size="3"><strong>Nombre</strong></ion-col>
+      <ion-col size="3"><strong>Apellido</strong></ion-col>
+      <ion-col size="3"><strong>Email</strong></ion-col>
+      <ion-col size="2"><strong>Teléfono</strong></ion-col>
+      <ion-col size="1"><strong>Acciones</strong></ion-col>
+    </ion-row>
+    <ion-row *ngFor="let profe of profesor" class="data-row">
+      <ion-col size="3">{{ profe.firstName }}</ion-col>
+      <ion-col size="3">{{ profe.lastName }}</ion-col>
+      <ion-col size="3">{{ profe.email }}</ion-col>
+      <ion-col size="2">{{ profe.phone }}</ion-col>
+      <ion-col size="1" class="action-buttons">
+        <ion-button fill="clear" color="primary" (click)="viewStudent(profe.id!)">
+          <ion-icon slot="icon-only" name="eye-outline"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" color="secondary" (click)="updateStudent(profe.id!)">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" color="danger" (click)="deleteStudent(profe.id!)">
+          <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

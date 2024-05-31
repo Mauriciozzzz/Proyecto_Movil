@@ -1,0 +1,31 @@
+.add-button {
+  margin-bottom: 20px;
+}
+
+ion-grid {
+  margin-top: 20px;
+}
+
+.header-row {
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+}
+
+.data-row {
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.data-row ion-col {
+  text-align: center;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+ion-button {
+  --padding-start: 0;
+  --padding-end: 0;
+}

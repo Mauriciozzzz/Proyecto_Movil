@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalles del Estudiante</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ student?.firstName }} {{ student?.lastName }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Nombre:</ion-label>
+        <ion-input [value]="student?.firstName" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Apellido:</ion-label>
+        <ion-input [value]="student?.lastName" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email:</ion-label>
+        <ion-input [value]="student?.email" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Teléfono:</ion-label>
+        <ion-input [value]="student?.phone" readonly></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-button expand="full" color="medium" (click)="goBack()">
+    <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+    Volver
+  </ion-button>
+</ion-content>
